@@ -13,10 +13,10 @@
             <ColumnDefinition Width="210*" />
             <ColumnDefinition Width="293*" />
         </Grid.ColumnDefinitions>
-        <TextBox Text="{Binding LoginUser.UserName}"  Grid.Row="1" Grid.Column="1" />
-        <TextBox Text="{Binding LoginUser.Password}" Grid.Row="2" Grid.Column="1" />
         <Label Content="UserName" Grid.Row="1" Grid.Column="0"/>
         <Label Content="Password" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Text="{Binding LoginUser.UserName}"  Grid.Row="1" Grid.Column="1" />
+        <TextBox Text="{Binding LoginUser.Password, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" />
         <Button Command="{Binding LogonCommand}" Grid.Row="3" Grid.Column="1" Content="Login" />
     </Grid>
 </Window>

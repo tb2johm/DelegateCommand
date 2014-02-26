@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DelegateCommand
 {
-    public class User : INotifyPropertyChanged
+    public partial class User : INotifyPropertyChanged
     {
         private string _userName;
         public string UserName
