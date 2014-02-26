@@ -7,31 +7,18 @@ namespace DelegateCommand
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private string _userName;
-        public string UserName
+        private User _loginUser;
+        public User LoginUser
         {
-            get { return _userName; }
+            get { return _loginUser; }
             set
             {
-                if (_userName != value)
+                if (_loginUser != value)
                 {
-                    _userName = value;
-                    OnPropertyChanged("UserName");
+                    _loginUser = value;
+                    OnPropertyChanged("LoginUser");
                 }
             }
-        }
-
-        private string _password;
-        public string Password {
-            get { return _password; }
-            set
-            {
-                if (_password != value)
-                {
-                    _password = value;
-                    OnPropertyChanged("Password");
-                }
-            } 
         }
 
         public ICommand LogonCommand { get; set; }
@@ -43,15 +30,15 @@ namespace DelegateCommand
 
         private bool CanExecuteLogon()
         {
-            return (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password));
+            return (!string.IsNullOrWhiteSpace(LoginUser.UserName) && !string.IsNullOrWhiteSpace(LoginUser.Password));
         }
 
         private void ExecuteLogon()
         {
-            if (UserName == "Markus" && Password == "Yes")
+            if (LoginUser.UserName == "Markus" && LoginUser.Password == "Yes")
             {
-                UserName = "OKIDOKI";
-                Password = string.Empty;
+                LoginUser.UserName = "OKIDOKI";
+                LoginUser.Password = string.Empty;
             }
         }
 

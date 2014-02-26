@@ -12,8 +12,11 @@ namespace DelegateCommand
             InitializeComponent();
             this.DataContext = new MainWindowViewModel()
             {
-                UserName = "Bart",
-                Password = "Nooo"
+                LoginUser = new User()
+                {
+                    UserName = "Bart",
+                    Password = "Nooo"
+                }
             };
         }
     }

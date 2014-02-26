@@ -20,7 +20,7 @@ namespace DelegateCommand
 
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            MessageBox.Show("Error: " + e.Exception.ToString();
+            MessageBox.Show("Error: " + e.Exception.ToString());
         }
     }
 }
