@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Documents;
 using System.Windows.Input;
+using DelegateCommand.ViewModels;
 
 namespace DelegateCommand
 {

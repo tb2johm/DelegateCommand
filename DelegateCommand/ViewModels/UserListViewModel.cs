@@ -36,6 +36,7 @@ namespace DelegateCommand.ViewModels
             AllUsers.Add(new User() { UserName = "Other", Password = "Guy" });
             AllUsers.Add(new User() { UserName = "Bernt", Password = "sdfa" });
             AllUsers.Add(new User() { UserName = "Markus", Password = "lkajsjk" });
+            //AllUsers.Add(new SuperUser() { UserName = "GOd", Password = "kjsd", Level = 999});
 
         }
 

@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace DelegateCommand
+namespace DelegateCommand.ViewModels
 {
-    public partial class User : INotifyPropertyChanged
+    public partial class User : ViewModelBase
     {
         private string _userName;
         public string UserName
@@ -17,7 +17,7 @@ namespace DelegateCommand
                 if (_userName != value)
                 {
                     _userName = value;
-                    OnPropertyChanged("UserName");
+                   Notify("UserName");
                 }
             }
         }
@@ -31,19 +31,28 @@ namespace DelegateCommand
                 if (_password != value)
                 {
                     _password = value;
-                    OnPropertyChanged("Password");
+                    Notify("Password");
                 }
             }
         }
+    }
 
-        
-        
-        
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string property)
+    public class SuperUser : User
+    {
+        private int _level;
+
+        public int Level
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            get { return _level; }
+            set
+            {
+                if (_level != value)
+                {
+                    _level = value;
+                    Notify("Level");
+                }
+            }
         }
+        
     }
 }

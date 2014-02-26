@@ -58,6 +58,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\User.cs" />
     <Compile Include="ViewModels\UserListViewModel.cs" />
+    <Compile Include="ViewModels\UserTemplateSelector.cs" />
     <Compile Include="ViewModels\UserValidation.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\UserList.xaml.cs">
