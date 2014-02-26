@@ -22,6 +22,7 @@ namespace DelegateCommand
         }
 
         public ICommand LogonCommand { get; set; }
+        public event EventHandler<EventArgs> LogonOk;
 
         public MainWindowViewModel()
         {
@@ -39,6 +40,11 @@ namespace DelegateCommand
             {
                 LoginUser.UserName = "OKIDOKI";
                 LoginUser.Password = string.Empty;
+
+                if (LogonOk != null)
+                {
+                    LogonOk.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 
