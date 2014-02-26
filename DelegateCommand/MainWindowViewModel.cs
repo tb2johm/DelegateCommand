@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace DelegateCommand
