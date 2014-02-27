@@ -10,28 +10,15 @@
             </CollectionViewSource.GroupDescriptions>
         </CollectionViewSource>
         <l:UserTemplateSelector x:Key="userTemplateSelector"/>
-        <!--<DataTemplate x:Key="UserTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Path=UserName}"/>
-                <TextBlock Text=" - "/>
-                <TextBlock Text="{Binding Path=Password}"/>
-            </StackPanel>
-        </DataTemplate>-->
-        <DataTemplate x:Key="SuperUserTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Path=UserName}"/>
-                <TextBlock Text=" - "/>
-                <TextBlock Text="{Binding Path=Password}"/>
-                <TextBlock Text="{Binding Path=Level}"/>
-            </StackPanel>
-        </DataTemplate>
+
     </Window.Resources>
     <Grid>
         <ListView x:Name="ListView1" 
                   ItemsSource="{Binding Source={StaticResource Users}}" 
                   SelectedItem="{Binding SelectedUser}"
+                  ItemTemplateSelector="{StaticResource userTemplateSelector}"
                   Height="153" HorizontalAlignment="Left" Margin="12,12,0,0" VerticalAlignment="Top" Width="254" >
-            <ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=UserName}"/>
@@ -39,7 +26,7 @@
                         <TextBlock Text="{Binding Path=Password}"/>
                     </StackPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
         </ListView>
         <Grid Height="45" HorizontalAlignment="Left" Margin="26,200,0,0" x:Name="SelectedUser" DataContext="{Binding SelectedUser}" VerticalAlignment="Top" Width="215">
             <Grid.ColumnDefinitions>

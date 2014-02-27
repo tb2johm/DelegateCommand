@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="UserTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Path=UserName}"/>
+            <TextBlock Text=" - "/>
+            <TextBlock Text="{Binding Path=Password}"/>
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="SuperUserTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Path=UserName}"/>
+            <TextBlock Text=" - "/>
+            <TextBlock Text="{Binding Path=Password}"/>
+            <TextBlock Text=": "/>
+            <TextBlock Text="{Binding Path=Level}"/>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
